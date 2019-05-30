@@ -27,6 +27,9 @@ public class AddTask extends AppCompatActivity {
         btnAdd = findViewById(R.id.buttonAdd);
         btnCancel = findViewById(R.id.buttonCancel);
 
+        etName = findViewById(R.id.editTextName);
+        etDesc = findViewById(R.id.editTextDescription);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

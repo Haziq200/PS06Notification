@@ -24,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
         lv = findViewById(R.id.lv);
         btnAdd = findViewById(R.id.btnAddTask);
+
         taskal = new ArrayList<Task>();
-        aa = new TaskAdapter(this, R.layout.custom_layout, taskal);
+        aa = new TaskAdapter(this,R.layout.custom_layout,taskal);
 
         DBHelper db = new DBHelper(MainActivity.this);
         ArrayList<Task> data = db.getAllTask();
         aa = new TaskAdapter(this, R.layout.custom_layout, data);
+        aa.notifyDataSetChanged();
+
         lv.setAdapter(aa);
 
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 
 
