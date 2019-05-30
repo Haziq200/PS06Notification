@@ -49,15 +49,15 @@ public class AddTask extends AppCompatActivity {
                 DBHelper dbHelper = new DBHelper(AddTask.this);
                 db.insertTask(name, desc);
                 Calendar cal = Calendar.getInstance();
-                cal.add(Calendar.SECOND, Integer.parseInt(time));
+                cal.add(Calendar.SECOND, 5);
 
 
                 Intent intent = new Intent(AddTask.this,
-                        ScheduledNotificationReceiver.class);
+                        TaskBroadcastReceiver.class);
                 intent.putExtra("name", name);
 
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                        AddActivity.this, reqCode,
+                        AddTask.this, reqCode,
                         intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 
