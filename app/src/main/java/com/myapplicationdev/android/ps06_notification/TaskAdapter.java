@@ -35,7 +35,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         Task currentTask = task.get(position);
 
 
-        tvName.setText(currentTask.getName());
+        tvName.setText(currentTask.getId() + " " + currentTask.getName());
         tvDesc.setText(currentTask.getDescription());
 
         return rowView;
